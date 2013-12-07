@@ -3,7 +3,7 @@
   src: url(../fonts/Magdeburg.TTF);
 }
 
-.main_content {
+.outline {
 	padding-right: 100px;
 	padding-left: 100px;
 }
@@ -11,11 +11,28 @@
 .text_header {
 	text-align:center;
 	font-family:HarryPotter;
-	font-size:50px;
+	font-size:60px;
+}
+
+.text_subheader {
+	text-align: center;
+	font-family: HarryPotter;
+	font-size: 30px;
 }
 
 .text_main {
 	font-family: HarryPotter;
-	font-size: 25px;
+	font-size: 17px;
 	text-align: justify;
+}
+
+.column {
+	float:left;
+	width: 33%;
+}
+
+#two_columns {
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	column-count:2;
 }
