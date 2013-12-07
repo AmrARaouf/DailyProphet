@@ -1,0 +1,21 @@
+@font-face {
+  font-family: HarryPotter;
+  src: url(../fonts/Magdeburg.TTF);
+}
+
+.main_content {
+	padding-right: 100px;
+	padding-left: 100px;
+}
+
+.text_header {
+	text-align:center;
+	font-family:HarryPotter;
+	font-size:50px;
+}
+
+.text_main {
+	font-family: HarryPotter;
+	font-size: 25px;
+	text-align: justify;
+}
