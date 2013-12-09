@@ -49,3 +49,26 @@ function playVideo() {
     b.textContent = "Play";
   }
 }
+
+google.load("feeds", "1");
+      var rssDivHtml = "<ul>";
+
+      function initialize() {
+        var feed = new google.feeds.Feed("http://allthingsd.com/tag/harry-potter/feed/");
+        feed.load(function(result) {
+          if (!result.error) {
+            var container = document.getElementById("column2");
+            for (var i = 0; i < result.feed.entries.length; i++) {
+              var entry = result.feed.entries[i];
+              //var div = document.createElement("div");
+              //div.appendChild(document.createTextNode(entry.title));
+              //container.appendChild(div);
+              rssDivHtml += "<li><a href='" + entry.link + "'>" + entry.title + "</a></li>";
+            }
+            rssDivHtml+= "</ul>"
+            container.innerHTML = rssDivHtml;
+          }
+        });
+      }
+      
+google.setOnLoadCallback(initialize);
