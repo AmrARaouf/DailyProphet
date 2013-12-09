@@ -1,10 +1,35 @@
-<!DOCTYPE html>
+<! DOCTYPE HTML>
 <html>
 <head>
 	<title>Daily Prophet</title>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+	    google.load("feeds", "1");
+	    var rssDivHtml = "<ul>";
+
+	    function initialize() {
+	      var feed = new google.feeds.Feed("http://allthingsd.com/tag/harry-potter/feed/");
+	      feed.load(function(result) {
+	        if (!result.error) {
+	          var container = document.getElementById("column2");
+	          for (var i = 0; i < result.feed.entries.length; i++) {
+	            var entry = result.feed.entries[i];
+	            //var div = document.createElement("div");
+	            //div.appendChild(document.createTextNode(entry.title));
+	            //container.appendChild(div);
+	            rssDivHtml += "<li><a href='" + entry.link + "'>" + entry.title + "</a></li>";
+	          }
+	          rssDivHtml+= "</ul>"
+	          container.innerHTML = rssDivHtml;
+	        }
+	      });
+	    }
+	    
+	    google.setOnLoadCallback(initialize);
+    </script>
 </head>
 <body background="img/background.jpg">
 <div class="outline">
