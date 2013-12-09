@@ -31,8 +31,55 @@
 	width: 33%;
 }
 
+.weasly {
+	float:left;
+	width: 50%;
+}
+
 #two_columns {
 	-moz-column-count:2;
 	-webkit-column-count:2;
 	column-count:2;
+}
+
+#w1 {
+	position:relative;
+	animation: wone 5s infinite;
+	-webkit-animation: wone 5s infinite;
+}
+
+#w2 {
+	position:relative;
+	animation: wtwo 5s infinite;
+	-webkit-animation: wtwo 5s infinite;
+}
+
+@keyframes wone
+{
+0%   {left:0px;}
+50%  {left:274px;}
+100%  {left:0px;}
+}
+
+
+@-webkit-keyframes wone
+{
+0%   {left:0px;}
+50%  {left:274px;}
+100%  {left:0px;}
+}
+
+@keyframes wtwo
+{
+0%   {right:0px;}
+50%  {right:274px;}
+100%  {right:0px;}
+}
+
+
+@-webkit-keyframes wtwo
+{
+0%   {right:0px;}
+50%  {right:274px;}
+100%  {right:0px;}
 }
